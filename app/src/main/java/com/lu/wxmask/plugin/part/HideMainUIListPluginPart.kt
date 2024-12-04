@@ -369,16 +369,16 @@ class HideMainUIListPluginPart : IPlugin {
                                 }
                             }
                         }
-                        // 恢复被置底的好友
-                        // try {
-                        //     val cTime = XposedHelpers2.getObjectField<Any>(itemData, "field_conversationTime")
-                        //     val fieldFlag = XposedHelpers2.getObjectField<Any>(itemData, "field_flag")
-                        //     if (cTime != null && fieldFlag != cTime) {
-                        //         XposedHelpers2.setObjectField(itemData, "field_flag", cTime)
-                        //     }
-                        // } catch (e: Exception) {
-                        //     e.printStackTrace()
-                        // }
+                        // 恢复被置底的好友 cTime -> 0
+                        try {
+                            val cTime = XposedHelpers2.getObjectField<Any>(itemData, "field_conversationTime")
+                            val fieldFlag = XposedHelpers2.getObjectField<Any>(itemData, "field_flag")
+                            if (cTime != null && fieldFlag != cTime) {
+                                XposedHelpers2.setObjectField(itemData, "field_flag", 0)
+                            }
+                        } catch (e: Exception) {
+                            e.printStackTrace()
+                        }
 
                     }
 
