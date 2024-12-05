@@ -374,7 +374,7 @@ class HideMainUIListPluginPart : IPlugin {
                             val cTime = XposedHelpers2.getObjectField<Any>(itemData, "field_conversationTime")
                             val fieldFlag = XposedHelpers2.getObjectField<Any>(itemData, "field_flag")
                             if (cTime != null && fieldFlag != cTime) {
-                                XposedHelpers2.setObjectField(itemData, "field_flag", 0)
+                                XposedHelpers2.setObjectField(itemData, "field_flag", -1)
                             }
                         } catch (e: Exception) {
                             e.printStackTrace()
