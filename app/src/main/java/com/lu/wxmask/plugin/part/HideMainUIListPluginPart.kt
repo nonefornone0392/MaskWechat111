@@ -369,7 +369,7 @@ class HideMainUIListPluginPart : IPlugin {
                                 }
                             }
                         }
-                        // 恢复被置底的好友 cTime -> 0
+                        // 恢复被置底的好友 cTime -> 0 
                         try {
                             val cTime = XposedHelpers2.getObjectField<Any>(itemData, "field_conversationTime")
                             val fieldFlag = XposedHelpers2.getObjectField<Any>(itemData, "field_flag")
