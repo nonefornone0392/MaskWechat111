@@ -89,4 +89,3 @@ jobs:
           python robot.py -e ci
         fi
 #        curl -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" -d "chat_id=$CHAT_ID&text=CI编译完成${github_run_url}"
-
